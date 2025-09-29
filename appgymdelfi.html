@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Rutina Gym</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #222;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .container {
+      padding: 1rem;
+    }
+    .day-button {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      background: #28a745;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .routine {
+      display: none;
+      margin-top: 1rem;
+    }
+    .exercise {
+      background: #1e1e1e;
+      margin: 0.5rem 0;
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .exercise h3 {
+      margin: 0 0 0.5rem 0;
+    }
+    .back-btn {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      background: #007bff;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>Mi Rutina Gym</header>
+  <div class="container" id="menu">
+    <button class="day-button" onclick="showRoutine('lunes')">Lunes - Isquios / Cuádriceps / Gemelos</button>
+    <button class="day-button" onclick="showRoutine('martes')">Martes - Pecho / Bíceps / Tríceps</button>
+    <button class="day-button" onclick="showRoutine('miercoles')">Miércoles - Glúteos</button>
+    <button class="day-button" onclick="showRoutine('jueves')">Jueves - Cuádriceps</button>
+    <button class="day-button" onclick="showRoutine('viernes')">Viernes - Espalda / Hombros</button>
+  </div>
+
+  <!-- Rutinas -->
+  <div class="container routine" id="lunes">
+    <h2>Lunes - Isquios / Cuádriceps / Gemelos</h2>
+    <div class="exercise"><h3>Peso Muerto con barra</h3><p>4x6-10 reps<br>Músculos: glúteos, isquios, espalda baja, core, trapecios</p></div>
+    <div class="exercise"><h3>Sentadilla Búlgara + Estocadas atrás</h3><p>4x10-12 reps c/pierna (superserie)<br>Músculos: glúteos, cuádriceps, isquios, core</p></div>
+    <div class="exercise"><h3>Sissy Squat</h3><p>3x10-12 reps<br>Músculos: cuádriceps puro</p></div>
+    <div class="exercise"><h3>Femoral Sentado + Gemelos</h3><p>4x10-12 reps (femoral) + 3x12-15 reps (gemelos)<br>Músculos: femorales, gemelos, sóleos</p></div>
+    <button class="back-btn" onclick="goBack()">Volver</button>
+  </div>
+
+  <div class="container routine" id="martes">
+    <h2>Martes - Pecho / Bíceps / Tríceps</h2>
+    <div class="exercise"><h3>Press banca + Push ups</h3><p>4x6-8 reps + 8-10 reps<br>Músculos: pectoral, tríceps, deltoides, core</p></div>
+    <div class="exercise"><h3>Press inclinado con mancuernas</h3><p>4x8-10 reps</p></div>
+    <div class="exercise"><h3>Aperturas máquina</h3><p>3x10-12 reps</p></div>
+    <div class="exercise"><h3>Extensión polea + Fondos asistidos</h3><p>4x12-15 reps + 8-10 reps (superserie)</p></div>
+    <div class="exercise"><h3>Tríceps Francés con mancuernas</h3><p>4x10-12 reps</p></div>
+    <div class="exercise"><h3>Vuelos Laterales + Frontales</h3><p>3x10-12 + 10 reps</p></div>
+    <div class="exercise"><h3>Polea simultáneo (cierre)</h3><p>3x8-10 reps</p></div>
+    <button class="back-btn" onclick="goBack()">Volver</button>
+  </div>
+
+  <div class="container routine" id="miercoles">
+    <h2>Miércoles - Glúteos</h2>
+    <div class="exercise"><h3>Hip Thrust con barra</h3><p>4x10-12 reps (última con isométrico 5s)</p></div>
+    <div class="exercise"><h3>Sentadilla con barra + Estocada fija</h3><p>4x10-12 + 10 reps c/pierna</p></div>
+    <div class="exercise"><h3>Búlgaras + Patada de glúteo en polea</h3><p>4x8 + 12-15 reps c/pierna</p></div>
+    <div class="exercise"><h3>Peso muerto sumo + Abductores</h3><p>4x8-10 reps + 15 reps</p></div>
+    <button class="back-btn" onclick="goBack()">Volver</button>
+  </div>
+
+  <div class="container routine" id="jueves">
+    <h2>Jueves - Cuádriceps</h2>
+    <div class="exercise"><h3>Sentadilla con barra</h3><p>4x8-10 reps</p></div>
+    <div class="exercise"><h3>Prensa pies abajo + Sentadillas con talón en disco</h3><p>4x12-15 + 10 reps c/pierna</p></div>
+    <div class="exercise"><h3>Estocadas búlgaras</h3><p>4x10-10-10-8 reps</p></div>
+    <div class="exercise"><h3>Estocadas con rodilla + Subidas al cajón</h3><p>3x8 + 10 reps c/pierna</p></div>
+    <div class="exercise"><h3>Silla de cuádriceps</h3><p>4x12 reps</p></div>
+    <button class="back-btn" onclick="goBack()">Volver</button>
+  </div>
+
+  <div class="container routine" id="viernes">
+    <h2>Viernes - Espalda / Hombros</h2>
+    <div class="exercise"><h3>Dominadas</h3><p>4x6-10 reps</p></div>
+    <div class="exercise"><h3>Remo con mancuernas</h3><p>4x8-10 reps</p></div>
+    <div class="exercise"><h3>Pull Down 1 brazo + Pull Face</h3><p>4x10-12 + 12-15 reps</p></div>
+    <div class="exercise"><h3>Remo en máquina</h3><p>4x8-10 reps</p></div>
+    <div class="exercise"><h3>Press militar + Elevaciones laterales</h3><p>4x8-10 + 12-15 reps</p></div>
+    <div class="exercise"><h3>Pullover en polea</h3><p>4x10-12 reps</p></div>
+    <div class="exercise"><h3>Hiperextensiones</h3><p>4x12-15 reps</p></div>
+    <button class="back-btn" onclick="goBack()">Volver</button>
+  </div>
+
+  <script>
+    function showRoutine(day) {
+      document.getElementById("menu").style.display = "none";
+      document.querySelectorAll(".routine").forEach(r => r.style.display = "none");
+      document.getElementById(day).style.display = "block";
+    }
+    function goBack() {
+      document.querySelectorAll(".routine").forEach(r => r.style.display = "none");
+      document.getElementById("menu").style.display = "block";
+    }
+  </script>
+</body>
+</html>
